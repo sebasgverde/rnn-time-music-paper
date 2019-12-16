@@ -1,8 +1,9 @@
 # <center>Sequence Generation using Deep Recurrent Networks and Embedding Representations: A study case in music.</center>
+
+# Printed anonymous version of the supplementary web page.
+
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
-Printed anonymous version of the
-supplementary web page.
 
 
 [<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
