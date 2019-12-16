@@ -2,7 +2,7 @@
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
 
-[<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-cells-music-paper)
+[<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
 
 ![](https://sebasgverde.github.io/test/images/RNNtraining.jpg)
 ![](https://sebasgverde.github.io/test/images/RNNsample.jpg)
@@ -17,7 +17,7 @@ Automatic generation of sequences has been a highly explored field in the last y
 - [Midi songs final models](https://www.dropbox.com/s/v2w18qoos8quz8c/generated100.zip?dl=0)
 
 ## Code
-- [Paper scripts](https://github.com/sebasgverde/rnn-cells-music-paper)
+- [Paper scripts](https://github.com/sebasgverde/rnn-time-music-paper)
 - [RNN model 1.0](https://github.com/sebasgverde/rnnMusicSeqGenerator)
 - [Library for midi manipulation 1.0](https://github.com/sebasgverde/music-geometry-eval)
 - [Library for music evaluation 1.0](https://github.com/sebasgverde/midi-manager)
@@ -38,7 +38,7 @@ Create a root folder and clone the scripts and model repositories:
 ```
 mkdir exampleresearch
 cd exampleresearch
-git clone https://github.com/sebasgverde/rnn-cells-music-paper.git
+git clone https://github.com/sebasgverde/rnn-time-music-paper.git
 git clone -b 1.0 --single-branch https://github.com/sebasgverde/rnnMusicSeqGenerator
 ```
 
@@ -73,7 +73,7 @@ rm dataset.zip
 
 <!-- You can also make some unit test to the pickles
 ```
-python rnn-cells-music-paper/paper_scripts/unittestdatacreation.py -v
+python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 ``` -->
 
 ---
@@ -97,7 +97,7 @@ rm generated_songs.zip
 
 Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware
 ```
-./rnn-cells-music-paper/paper_scripts/train.sh
+./rnn-time-music-paper/paper_scripts/train.sh
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type.
 
@@ -116,7 +116,7 @@ Now that we have reduced the problem to 6 models (best learning curve for each p
 ```
 mkdir ~/exampleresearch/experiments/
 mkdir ~/exampleresearch/experiments/generated
-./rnn-cells-music-paper/paper_scripts/generatesongs.sh  
+./rnn-time-music-paper/paper_scripts/generatesongs.sh  
 ```
 This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
 ![](https://sebasgverde.github.io/test/images/song_generated_files.png)
@@ -124,18 +124,18 @@ This will create 6 folders, each with 200 files, the 100 songs as midi and as pi
 #### Models metric evaluation
 The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
 ```
-python rnn-cells-music-paper/paper_scripts/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
+python rnn-time-music-paper/paper_scripts/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
 ```
 After that, create a folder and move each of the most representative songs there, this script will generate the latex code for the table with those metrics
 ```
-python rnn-cells-music-paper/paper_scripts/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/most_repres_songs > ~/exampleresearch/experiments/metrics_eval_most_repres_songs.txt
+python rnn-time-music-paper/paper_scripts/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/most_repres_songs > ~/exampleresearch/experiments/metrics_eval_most_repres_songs.txt
 ```
 
 #### Analysing tonality of the models quantitatively
 
 In order to analyze it, it is necessary to have a baseline applying the metrics to the dataset:
 ```
-python rnn-cells-music-paper/paper_scripts/dataset_metric_eval.py --pickles_dir ~/exampleresearch/dataset > ~/exampleresearch/experiments/metrics_eval_dataset.txt
+python rnn-time-music-paper/paper_scripts/dataset_metric_eval.py --pickles_dir ~/exampleresearch/dataset > ~/exampleresearch/experiments/metrics_eval_dataset.txt
 ```
 Once you compile the latex tables, they will look like this:
 
