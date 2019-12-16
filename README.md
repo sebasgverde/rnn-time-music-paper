@@ -1,6 +1,6 @@
 # <center>Sequence Generation using Deep Recurrent Networks and Embedding Representations: A study case in music.</center>
 
-# Printed anonymous version of the supplementary web page.
+## Printed anonymous version of the supplementary web page.
 
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
@@ -70,7 +70,9 @@ The mono-midi-transposition-dataset is the result of series of transformations o
 Download the datasets:
 ```
 mkdir dataset
-wget -N https://www.dropbox.com/sh/xyr47x5ck48krvx/AAAprJDo2at6AlEiWVp-U9cqa?dl=1 -O dataset.zip
+wget -N https://xxx.xxxx dataset.zip
+
+<!-- wget -N https://www.dropbox.com/sh/xyr47x5ck48krvx/AAAprJDo2at6AlEiWVp-U9cqa?dl=1 -O dataset.zip -->
 unzip dataset.zip -d dataset/
 rm dataset.zip
 ```
@@ -83,8 +85,11 @@ python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 ---
 
 **Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/test/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
+
 ```
-wget -N https://www.dropbox.com/s/34w1miaz6j01rw5/models.zip?dl=1 -O model_weights.zip
+wget -N https://xxxx.xxxx -O model_weights.zip
+
+<!-- wget -N https://www.dropbox.com/s/34w1miaz6j01rw5/models.zip?dl=1 -O model_weights.zip -->
 unzip model_weights.zip -d ~/exampleresearch/
 rm model_weights.zip
 ```
