@@ -71,14 +71,14 @@ unzip dataset.zip -d dataset/
 rm dataset.zip
 ```
 
-You can also make some unit test to the pickles
+<!-- You can also make some unit test to the pickles
 ```
 python rnn-cells-music-paper/paper_scripts/unittestdatacreation.py -v
-```
+``` -->
 
 ---
 
-**Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/test/#models-metric-evaluation) the next two sections and download the network weights and the 900 generated songs.
+**Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/test/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
 ```
 wget -N https://www.dropbox.com/s/34w1miaz6j01rw5/models.zip?dl=1 -O model_weights.zip
 unzip model_weights.zip -d ~/exampleresearch/
@@ -93,15 +93,15 @@ rm generated_songs.zip
 ```
 ---
 
-#### Optimal number of layers
+#### Optimal number of units
 
-Run the script which does 45 experiments (the 3 dataset variations, with the 3 cell types and number of layers from 1 to 5), time will depend on the GPU hardware, in a Nvidia m1000 it takes around a week
+Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware
 ```
 ./rnn-cells-music-paper/paper_scripts/bashlayerscompleteexperimet.sh
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type.
 
-It is time now to get the learning curves graphs to reduce the research to 9 models. Use this command for each combination of dataset-cell:
+It is time now to get the learning curves graphs to reduce the research to 6 models. Use this command for each combination of dataset-cell:
 ```
 tensorboard --logdir models/control/lstm/
 ```
@@ -112,17 +112,17 @@ In the "Scalars" of tensorboard you will see a graph like this:
 #### Generating songs
 
 
-Now that we have reduced the problem to 9 models (best learning curve for each pair dataset-cell), we will generate 100 songs with each model, always using the same seed and size (just modify the generate9timesn script with the appropriate layer number)
+Now that we have reduced the problem to 6 models (best learning curve for each pair dataset-cell), we will generate 100 songs with each model, always using the same seed and size (just modify the generatesongs script with the appropriate units number)
 ```
 mkdir ~/exampleresearch/experiments/
 mkdir ~/exampleresearch/experiments/generated
 ./rnn-cells-music-paper/paper_scripts/generate9timesn.sh  
 ```
-This will create 9 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
+This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
 ![](https://sebasgverde.github.io/test/images/song_generated_files.png)
 
 #### Models metric evaluation
-The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 9 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
+The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
 ```
 python rnn-cells-music-paper/paper_scripts/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
 ```
@@ -155,5 +155,5 @@ Now, you can use the scripts in template_scripts, to transform the midi files in
 - save as .mscz
 - export as png (even so the console doesn't work, export each png manually)
 
-### Other scripts
-The scripts in scripts_for_supercomputing are modified versions of the training script for 6 of the experiments which I trained in a cluster environment in HPC centre [Apolo](http://www.eafit.edu.co/centros/apolo/Paginas/technical-specification.aspx). It works with slurm as cluster management and job scheduling system, so also the slurm scripts are provided.
+<!-- ### Other scripts
+The scripts in scripts_for_supercomputing are modified versions of the training script for 6 of the experiments which I trained in a cluster environment in HPC centre [Apolo](http://www.eafit.edu.co/centros/apolo/Paginas/technical-specification.aspx). It works with slurm as cluster management and job scheduling system, so also the slurm scripts are provided. -->
