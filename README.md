@@ -1,6 +1,9 @@
 # <center>Sequence Generation using Deep Recurrent Networks and Embedding Representations: A study case in music.</center>
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
+Printed anonymous version of the
+supplementary web page.
+
 
 [<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
 
@@ -38,8 +41,8 @@ Create a root folder and clone the scripts and model repositories:
 ```
 mkdir exampleresearch
 cd exampleresearch
-git clone https://github.com/sebasgverde/rnn-time-music-paper.git
-git clone -b 1.0 --single-branch https://github.com/sebasgverde/rnnMusicSeqGenerator
+git clone https://xxxx.xxxx/rnn-time-music-paper.git
+git clone -b 1.0 --single-branch https://xxxx.xxxx/rnnMusicSeqGenerator
 ```
 
 create a virtual env using the requirements in rnnMusicSeqGenerator
@@ -50,14 +53,14 @@ pip install -r ~/exampleresearch/rnnMusicSeqGenerator/requirements.txt
 
 For this two special libraries which were developed by me, you have two options, I recommend to install them also in the virtual env
 ```
-pip install music-geometry-eval==1.0
-pip install midi-manager==1.0
+pip install xxxx.xxxx==1.0
+pip install xxxx.xxxx==1.0
 ```
 
 but you can also clone the repositories and use them as normal packages
 ```
-git clone -b 1.0 --single-branch https://github.com/sebasgverde/music-geometry-eval.git
-git clone -b 1.0 --single-branch https://github.com/sebasgverde/midi-manager.git
+git clone -b 1.0 --single-branch https://xxxx.xxxx.git
+git clone -b 1.0 --single-branch https://xxxx.xxxx.git
 ```
 
 #### Datasets
