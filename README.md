@@ -92,7 +92,7 @@ rm model_weights.zip
 
 ```
 mkdir ~/exampleresearch/experiments/
-wget -N https://www.dropbox.com/s/v2w18qoos8quz8c/generated100.zip?dl=1 -O generated_songs.zip
+wget -N https://xxxx.xxxx -O generated_songs.zip
 unzip generated_songs.zip -d ~/exampleresearch/experiments/
 rm generated_songs.zip
 ```
