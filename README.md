@@ -1,6 +1,6 @@
 # <center>Sequence Generation using Deep Recurrent Networks and Embedding Representations: A study case in music.</center>
 
-## Printed anonymous version of the supplementary web page.
+# Printed anonymous version of the supplementary web page.
 
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
@@ -71,8 +71,6 @@ Download the datasets:
 ```
 mkdir dataset
 wget -N https://xxx.xxxx dataset.zip
-
-<!-- wget -N https://www.dropbox.com/sh/xyr47x5ck48krvx/AAAprJDo2at6AlEiWVp-U9cqa?dl=1 -O dataset.zip -->
 unzip dataset.zip -d dataset/
 rm dataset.zip
 ```
@@ -88,8 +86,6 @@ python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 
 ```
 wget -N https://xxxx.xxxx -O model_weights.zip
-
-<!-- wget -N https://www.dropbox.com/s/34w1miaz6j01rw5/models.zip?dl=1 -O model_weights.zip -->
 unzip model_weights.zip -d ~/exampleresearch/
 rm model_weights.zip
 ```
