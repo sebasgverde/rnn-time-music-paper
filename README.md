@@ -97,15 +97,15 @@ rm generated_songs.zip
 
 Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware
 ```
-./rnn-cells-music-paper/paper_scripts/bashlayerscompleteexperimet.sh
+./rnn-cells-music-paper/paper_scripts/train.sh
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type.
 
-It is time now to get the learning curves graphs to reduce the research to 6 models. Use this command for each combination of dataset-cell:
+It is time now to get the learning curves graphs for training and validation to reduce the research to 6 models. Use this command for each combination of dataset-cell:
 ```
-tensorboard --logdir models/control/lstm/
+python make_learning_curves_graphic.py
 ```
-In the "Scalars" of tensorboard you will see a graph like this:
+You will see a graph like this:
 
 ![](https://sebasgverde.github.io/test/images/learnig_curve_control_lstm.png)
 
@@ -116,7 +116,7 @@ Now that we have reduced the problem to 6 models (best learning curve for each p
 ```
 mkdir ~/exampleresearch/experiments/
 mkdir ~/exampleresearch/experiments/generated
-./rnn-cells-music-paper/paper_scripts/generate9timesn.sh  
+./rnn-cells-music-paper/paper_scripts/generatesongs.sh  
 ```
 This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
 ![](https://sebasgverde.github.io/test/images/song_generated_files.png)
