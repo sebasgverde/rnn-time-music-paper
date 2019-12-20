@@ -1,4 +1,4 @@
-# <center>Sequence Generation using Deep Recurrent Networks and Embedding Representations: A study case in music.</center>
+# <center>Sequence Generation using Deep Recurrent Networks: A study case in music.</center>
 
 # Printed anonymous version of the supplementary web page.
 
@@ -11,7 +11,7 @@
 ![](https://sebasgverde.github.io/test/images/RNNtraining.jpg)
 ![](https://sebasgverde.github.io/test/images/RNNsample.jpg)
 ## Abstract
-Automatic generation of sequences has been a highly explored field in the last years. In particular, natural language processing and automatic music composition have gained importance due to the recent advances in machine learning and Neural Networks with intrinsic memory mechanisms such as Recurrent Neural Networks. This paper evaluates different types of memory mechanisms (memory cells) and analyses their performance in the field of music composition. The proposed approach considers music theory concepts such as transposition, and uses data transformations (embeddings) to introduce semantic meaning and improve the quality of the generated melodies. The performance of the proposed architecture is evaluated using quantitative metrics to measure the tonality of a musical composition.
+Automatic generation of sequences has been a highly explored field in the last years. In particular, natural language processing and automatic music composition have gained importance due to the recent advances in machine learning and Neural Networks with intrinsic memory mechanisms such as Recurrent Neural Networks. This paper evaluates different types of memory mechanisms (memory cells) and analyses their performance in the field of music composition. The proposed approach considers music theory concepts such as transposition, and uses data transformations (embeddings) to introduce semantic meaning. The performance of the proposed architecture is automatically evaluated using quantitative metrics based in geometry to measure the tonality of a musical composition.
 
 
 ## Datasets, Model Weights and more
@@ -42,8 +42,8 @@ Create a root folder and clone the scripts and model repositories:
 ```
 mkdir exampleresearch
 cd exampleresearch
-git clone https://xxxx.xxxx/rnn-time-music-paper.git
-git clone -b 1.0 --single-branch https://xxxx.xxxx/rnnMusicSeqGenerator
+git clone https://xxxx.xxxx/xxxx.git
+git clone -b 1.0 --single-branch https://xxxx.xxxx/xxxx
 ```
 
 create a virtual env using the requirements in rnnMusicSeqGenerator
@@ -127,7 +127,7 @@ This will create 6 folders, each with 200 files, the 100 songs as midi and as pi
 ![](https://sebasgverde.github.io/test/images/song_generated_files.png)
 
 #### Models metric evaluation
-The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
+The next step is to use the xxxxx library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
 ```
 python rnn-time-music-paper/paper_scripts/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
 ```
