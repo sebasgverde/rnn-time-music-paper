@@ -106,9 +106,9 @@ Run the script which does 30 experiments (the 3 dataset variations, with the 2 c
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type, inside the respective folders there will be the weights and a pickle with the model hyperparameters that are necesary to use the models at sampling, also pickles with information about the training history and learning curves graphs.
 
-It is time now to get the learning curves graphs for training and validation to reduce the research to 6 models. Use this command for each combination of dataset-cell:
+You can also create the learning curves with next script template using the learning_curve_info pickles
 ```
-python make_learning_curves_graphic.py
+python rnn-time-music-paper/make_learning_curves_graphic.py
 ```
 You will see a graph like this:
 
@@ -121,26 +121,26 @@ Now that we have reduced the problem to 6 models (best learning curve for each p
 ```
 mkdir ~/exampleresearch/experiments/
 mkdir ~/exampleresearch/experiments/generated
-./rnn-time-music-paper/paper_scripts/generatesongs.sh  
+./rnn-time-music-paper/generatesongs.sh
 ```
 This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/song_generated_files.png)
 
 #### Models metric evaluation
-The next step is to use the xxxxx library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
+The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
 ```
-python rnn-time-music-paper/paper_scripts/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
+python rnn-time-music-paper/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated_songs > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
 ```
 After that, create a folder and move each of the most representative songs there, this script will generate the latex code for the table with those metrics
 ```
-python rnn-time-music-paper/paper_scripts/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/most_repres_songs > ~/exampleresearch/experiments/metrics_eval_most_repres_songs.txt
+python rnn-time-music-paper/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/rep_songs > ~/exampleresearch/experiments/metrics_eval_most_repres_songs.txt
 ```
 
 #### Analysing tonality of the models quantitatively
 
 In order to analyze it, it is necessary to have a baseline applying the metrics to the dataset:
 ```
-python rnn-time-music-paper/paper_scripts/dataset_metric_eval.py --pickles_dir ~/exampleresearch/dataset > ~/exampleresearch/experiments/metrics_eval_dataset.txt
+python rnn-time-music-paper/dataset_metric_eval.py --pickles_dir ~/exampleresearch/data > ~/exampleresearch/experiments/metrics_eval_dataset.txt
 ```
 Once you compile the latex tables, they will look like this:
 
