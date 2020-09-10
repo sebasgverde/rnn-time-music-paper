@@ -100,11 +100,11 @@ rm generated_songs.zip
 
 #### Optimal number of units
 
-Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware
+Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware.
 ```
 ./rnn-time-music-paper/train.sh
 ```
-This will create the folder models, with all the models separated in folders by dataset and cell type.
+This will create the folder models, with all the models separated in folders by dataset and cell type, inside the respective folders there will be the weights and a pickle with the model hyperparameters that are necesary to use the models at sampling, also pickles with information about the training history and learning curves graphs.
 
 It is time now to get the learning curves graphs for training and validation to reduce the research to 6 models. Use this command for each combination of dataset-cell:
 ```
