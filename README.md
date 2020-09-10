@@ -102,7 +102,7 @@ rm generated_songs.zip
 
 Run the script which does 30 experiments (the 3 dataset variations, with the 2 cell types and 5 number of units), time will depend on the GPU hardware
 ```
-./rnn-time-music-paper/paper_scripts/train.sh
+./rnn-time-music-paper/train.sh
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type.
 
