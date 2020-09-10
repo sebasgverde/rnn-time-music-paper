@@ -8,8 +8,8 @@
 
 [<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
 
-![](https://sebasgverde.github.io/test/images/RNNtraining.jpg)
-![](https://sebasgverde.github.io/test/images/RNNsample.jpg)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNtraining.jpg)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNsample.jpg)
 ## Abstract
 Automatic generation of sequences has been a highly explored field in the last years. In particular, natural language processing and automatic music composition have gained importance due to the recent advances in machine learning and Neural Networks with intrinsic memory mechanisms such as Recurrent Neural Networks. This paper evaluates different types of memory mechanisms (memory cells) and analyses their performance in the field of music composition. The proposed approach considers music theory concepts such as transposition, and uses data transformations (embeddings) to introduce semantic meaning. The performance of the proposed architecture is automatically evaluated using quantitative metrics based in geometry to measure the tonality of a musical composition.
 
@@ -30,9 +30,9 @@ Automatic generation of sequences has been a highly explored field in the last y
 Click the images to see a youtube video
 
 #### Final models representative songs
-[![](https://sebasgverde.github.io/test/images/generated_songs_demo_1.png)](https://youtu.be/FGUIEshh6WU)
-[![](https://sebasgverde.github.io/test/images/generated_songs_demo_2.png)](https://youtu.be/FGUIEshh6WU)
-[![](https://sebasgverde.github.io/test/images/generated_songs_demo_3.png)](https://youtu.be/FGUIEshh6WU)
+[![](https://sebasgverde.github.io/rnn-time-music-paper/images/generated_songs_demo_1.png)](https://youtu.be/FGUIEshh6WU)
+[![](https://sebasgverde.github.io/rnn-time-music-paper/images/generated_songs_demo_2.png)](https://youtu.be/FGUIEshh6WU)
+[![](https://sebasgverde.github.io/rnn-time-music-paper/images/generated_songs_demo_3.png)](https://youtu.be/FGUIEshh6WU)
 
 ## Research Replication
 Note: All is done assuming you are in your home directory
@@ -66,7 +66,7 @@ git clone -b 1.0 --single-branch https://xxxx.xxxx.git
 
 #### Datasets
 The mono-midi-transposition-dataset is the result of series of transformations over the mono-MusicXML-dataset
-![](https://sebasgverde.github.io/test/images/datasetflow.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/datasetflow.png)
 Download the datasets:
 ```
 mkdir dataset
@@ -82,7 +82,7 @@ python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 
 ---
 
-**Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/test/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
+**Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/rnn-time-music-paper/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
 
 ```
 wget -N https://xxxx.xxxx -O model_weights.zip
@@ -112,7 +112,7 @@ python make_learning_curves_graphic.py
 ```
 You will see a graph like this:
 
-![](https://sebasgverde.github.io/test/images/learnig_curve_control_lstm.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/learnig_curve_control_lstm.png)
 
 #### Generating songs
 
@@ -124,7 +124,7 @@ mkdir ~/exampleresearch/experiments/generated
 ./rnn-time-music-paper/paper_scripts/generatesongs.sh  
 ```
 This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
-![](https://sebasgverde.github.io/test/images/song_generated_files.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/song_generated_files.png)
 
 #### Models metric evaluation
 The next step is to use the xxxxx library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
@@ -145,13 +145,13 @@ python rnn-time-music-paper/paper_scripts/dataset_metric_eval.py --pickles_dir ~
 Once you compile the latex tables, they will look like this:
 
 #### Dataset
-![](https://sebasgverde.github.io/test/images/metric_table_dataset.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/metric_table_dataset.png)
 
 #### Models
-![](https://sebasgverde.github.io/test/images/metric_table_models.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/metric_table_models.png)
 
 #### Most Representative Songs
-![](https://sebasgverde.github.io/test/images/metric_table_most_rep_songs.png)
+![](https://sebasgverde.github.io/rnn-time-music-paper/images/metric_table_most_rep_songs.png)
 
 Now, you can use the scripts in template_scripts, to transform the midi files in mp3, wav and jpg, however, the images aren't very flexible from console, seem there's no way to export to png from console indicating the dimensions, so I recommend:
 
