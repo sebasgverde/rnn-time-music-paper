@@ -70,7 +70,7 @@ The mono-midi-transposition-dataset is the result of series of transformations o
 Download the datasets:
 ```
 mkdir data
-wget -N https://www.dropbox.com/s/x0delcrq2jmo79i/data.zip?dl=1 data.zip
+wget -N https://www.dropbox.com/s/x0delcrq2jmo79i/data.zip?dl=1 -O data.zip
 unzip data.zip -d data/
 rm data.zip
 ```
@@ -85,8 +85,9 @@ python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 **Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/rnn-time-music-paper/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
 
 ```
+mkdir models/
 wget -N https://www.dropbox.com/s/1gofckoiqrymsyh/selected_models.zip?dl=1 -O model_weights.zip
-unzip selected_models.zip -d ~/exampleresearch/
+unzip model_weights.zip -d ~/exampleresearch/models/selected
 rm model_weights.zip
 ```
 
