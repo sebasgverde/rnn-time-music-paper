@@ -16,9 +16,9 @@ Automatic generation of sequences has been a highly explored field in the last y
 
 ## Datasets, Model Weights and more
 
-- [Datasets](https://www.dropbox.com/sh/xyr47x5ck48krvx/AAAprJDo2at6AlEiWVp-U9cqa?dl=0)
-- [Network Weigths](https://www.dropbox.com/s/34w1miaz6j01rw5/models.zip?dl=0)
-- [Midi songs final models](https://www.dropbox.com/s/v2w18qoos8quz8c/generated100.zip?dl=0)
+- [Datasets](https://www.dropbox.com/s/x0delcrq2jmo79i/data.zip?dl=0)
+- [Network Weigths](https://www.dropbox.com/s/1gofckoiqrymsyh/selected_models.zip?dl=0)
+- [Midi songs final models](https://www.dropbox.com/s/n2i1wgvm2bqky5p/generated_songs.zip?dl=0)
 
 ## Code
 - [Paper scripts](https://github.com/sebasgverde/rnn-time-music-paper)
@@ -69,10 +69,10 @@ The mono-midi-transposition-dataset is the result of series of transformations o
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/datasetflow.png)
 Download the datasets:
 ```
-mkdir dataset
-wget -N https://xxx.xxxx dataset.zip
-unzip dataset.zip -d dataset/
-rm dataset.zip
+mkdir data
+wget -N https://www.dropbox.com/s/x0delcrq2jmo79i/data.zip?dl=1 data.zip
+unzip data.zip -d data/
+rm data.zip
 ```
 
 <!-- You can also make some unit test to the pickles
@@ -85,14 +85,14 @@ python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
 **Special Note**: If instead of replicating the research you want to specifically reproduce the paper results, you can just [skip](https://sebasgverde.github.io/rnn-time-music-paper/#models-metric-evaluation) the next two sections and download the network weights and the 600 generated songs.
 
 ```
-wget -N https://xxxx.xxxx -O model_weights.zip
-unzip model_weights.zip -d ~/exampleresearch/
+wget -N https://www.dropbox.com/s/1gofckoiqrymsyh/selected_models.zip?dl=1 -O model_weights.zip
+unzip selected_models.zip -d ~/exampleresearch/
 rm model_weights.zip
 ```
 
 ```
 mkdir ~/exampleresearch/experiments/
-wget -N https://xxxx.xxxx -O generated_songs.zip
+wget -N https://www.dropbox.com/s/n2i1wgvm2bqky5p/generated_songs.zip?dl=1 -O generated_songs.zip
 unzip generated_songs.zip -d ~/exampleresearch/experiments/
 rm generated_songs.zip
 ```
@@ -120,7 +120,7 @@ You will see a graph like this:
 Now that we have reduced the problem to 6 models (best learning curve for each pair dataset-cell), we will generate 100 songs with each model, always using the same seed and size (just modify the generatesongs script with the appropriate units number)
 ```
 mkdir ~/exampleresearch/experiments/
-mkdir ~/exampleresearch/experiments/generated
+mkdir ~/exampleresearch/experiments/generated_songs
 ./rnn-time-music-paper/generatesongs.sh
 ```
 This will create 6 folders, each with 200 files, the 100 songs as midi and as pickle file with the song as a list.
