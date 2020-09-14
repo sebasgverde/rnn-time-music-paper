@@ -42,8 +42,8 @@ Create a root folder and clone the scripts and model repositories:
 ```
 mkdir exampleresearch
 cd exampleresearch
-git clone https://github.com/sebasgverde/rnnmusic/tree/nnmusic_model/
-git clone -b 1.0 --single-branch https://github.com/sebasgverde/rnnmusic/tree/nnmusic_model/rnnmusic
+git clone https://github.com/sebasgverde/rnn-time-music-paper.git
+git clone -b nnmusic_model --single-branch https://github.com/sebasgverde/rnnmusic.git
 ```
 
 create a virtual env using the requirements in rnnMusicSeqGenerator
