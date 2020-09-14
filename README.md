@@ -49,7 +49,7 @@ git clone -b nnmusic_model --single-branch https://github.com/sebasgverde/rnnmus
 create a virtual env using the requirements in rnnMusicSeqGenerator
 ```
 mkvirtualenv exampleresearchmusic
-pip install -r ~/exampleresearch/rnnMusicSeqGenerator/requirements.txt
+pip install -r ~/exampleresearch/rnnmusic/requirements.txt
 ```
 
 For this two special libraries which were developed by me, you have two options, I recommend to install them also in the virtual env
@@ -107,7 +107,7 @@ Run the script which does 30 experiments (the 3 dataset variations, with the 2 c
 ```
 This will create the folder models, with all the models separated in folders by dataset and cell type, inside the respective folders there will be the weights and a pickle with the model hyperparameters that are necesary to use the models at sampling, also pickles with information about the training history and learning curves graphs.
 
-You can also create the learning curves with next script template using the learning_curve_info pickles
+You can use the next script to create the general learning curves using the learning_curve_info pickles, which contains the learning groups for the a specific dataset, type (trianing or validation) and unit. Just open the script and modify it depending of what you need
 ```
 python rnn-time-music-paper/make_learning_curves_graphic.py
 ```
