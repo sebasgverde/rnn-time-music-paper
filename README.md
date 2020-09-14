@@ -24,7 +24,7 @@ Automatic generation of sequences has been a highly explored field in the last y
 - [Paper scripts](https://github.com/sebasgverde/rnn-time-music-paper)
 - [RNN model 1.0](https://github.com/sebasgverde/rnnMusicSeqGenerator)
 - [Library for midi manipulation 1.0](https://github.com/sebasgverde/music-geometry-eval)
-- [Library for music evaluation 1.0](https://github.com/sebasgverde/midi-manager)
+- [Library for music evaluation 2.0](https://github.com/sebasgverde/music-geometry-eval)
 
 ## Demos
 Click the images to see a youtube video
@@ -54,13 +54,13 @@ pip install -r ~/exampleresearch/rnnMusicSeqGenerator/requirements.txt
 
 For this two special libraries which were developed by me, you have two options, I recommend to install them also in the virtual env
 ```
-pip install xxxx.xxxx==1.0
+pip install music-geometry-eval==2.0
 pip install xxxx.xxxx==1.0
 ```
 
 but you can also clone the repositories and use them as normal packages
 ```
-git clone -b 1.0 --single-branch https://xxxx.xxxx.git
+git clone -b 2.0 --single-branch https://github.com/sebasgverde/music-geometry-eval.git
 git clone -b 1.0 --single-branch https://xxxx.xxxx.git
 ```
 
