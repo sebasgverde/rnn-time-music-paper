@@ -20,7 +20,7 @@ Automatic generation of sequences has been a highly explored field in the last y
 
 ## Code
 - [Paper scripts](https://github.com/sebasgverde/rnn-time-music-paper)
-- [RNN time model 1.0](https://github.com/sebasgverde/rnnmusic/tree/nnmusic_model)
+- [RNN time model 1.0](https://github.com/sebasgverde/mono_music_rnn_generator.git)
 - [Library for music evaluation 2.0](https://github.com/sebasgverde/music-geometry-eval)
 
 ## Demos
@@ -40,7 +40,7 @@ Create a root folder and clone the scripts and model repositories:
 mkdir exampleresearch
 cd exampleresearch
 git clone https://github.com/sebasgverde/rnn-time-music-paper.git
-git clone -b nnmusic_model --single-branch https://github.com/sebasgverde/rnnmusic.git
+git clone -b 1.0 --single-branch git@github.com:sebasgverde/mono_music_rnn_generator.git rnnmusic
 ```
 
 create a virtual env using the requirements in rnnMusicSeqGenerator
