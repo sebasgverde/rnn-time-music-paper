@@ -1,7 +1,5 @@
 # <center>Sequence Generation using Deep Recurrent Networks: A study case in music.</center>
 
-# Printed anonymous version of the supplementary web page.
-
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
 
@@ -23,7 +21,6 @@ Automatic generation of sequences has been a highly explored field in the last y
 ## Code
 - [Paper scripts](https://github.com/sebasgverde/rnn-time-music-paper)
 - [RNN time model 1.0](https://github.com/sebasgverde/rnnmusic/tree/nnmusic_model)
-- [Library for midi manipulation 1.0](https://github.com/sebasgverde/music-geometry-eval)
 - [Library for music evaluation 2.0](https://github.com/sebasgverde/music-geometry-eval)
 
 ## Demos
@@ -52,16 +49,14 @@ mkvirtualenv exampleresearchmusic
 pip install -r ~/exampleresearch/rnnmusic/requirements.txt
 ```
 
-For this two special libraries which were developed by me, you have two options, I recommend to install them also in the virtual env
+For this special library which was developed by me, you have two options, I recommend to install it also in the virtual env
 ```
 pip install music-geometry-eval==2.0
-pip install xxxx.xxxx==1.0
 ```
 
-but you can also clone the repositories and use them as normal packages
+but you can also clone the repository and use it as a normal package
 ```
 git clone -b 2.0 --single-branch https://github.com/sebasgverde/music-geometry-eval.git
-git clone -b 1.0 --single-branch https://xxxx.xxxx.git
 ```
 
 #### Datasets
@@ -74,11 +69,6 @@ wget -N https://www.dropbox.com/s/x0delcrq2jmo79i/data.zip?dl=1 -O data.zip
 unzip data.zip -d data/
 rm data.zip
 ```
-
-<!-- You can also make some unit test to the pickles
-```
-python rnn-time-music-paper/paper_scripts/unittestdatacreation.py -v
-``` -->
 
 ---
 
@@ -130,18 +120,18 @@ This will create 6 folders, each with 200 files, the 100 songs as midi and as pi
 #### Models metric evaluation
 The next step is to use the music_geometry_eval library to test the tonality of the models. This script will apply 3 quantitative metrics (Conjunct Melody Motion, Limited Macroharmony and Centricity) to each set of 100 songs. The output file will have 6 tables with all the songs, different latex tables with summary information, the list of the most representative song of each model (the song whose metrics have the lower euclidean distance to the mean of the 100) and finally, a latex table with the mean and standard deviation for each metric in each model for each 100 song set.
 ```
-python rnn-time-music-paper/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated_songs > ~/exampleresearch/experiments/metrics_eval_100_songs.txt
+python rnn-time-music-paper/eval_n_songs.py --generated_dir ~/exampleresearch/experiments/generated_songs > ~/exampleresearch/experiments/eval_n_songs_tables.txt
 ```
 After that, create a folder and move each of the most representative songs there, this script will generate the latex code for the table with those metrics
 ```
-python rnn-time-music-paper/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/rep_songs > ~/exampleresearch/experiments/metrics_eval_most_repres_songs.txt
+python rnn-time-music-paper/eval_most_rep_songs.py --songs_folder ~/exampleresearch/experiments/rep_songs > ~/exampleresearch/experiments/eval_most_rep_tables.txt
 ```
 
 #### Analysing tonality of the models quantitatively
 
 In order to analyze it, it is necessary to have a baseline applying the metrics to the dataset:
 ```
-python rnn-time-music-paper/dataset_metric_eval.py --pickles_dir ~/exampleresearch/data > ~/exampleresearch/experiments/metrics_eval_dataset.txt
+python rnn-time-music-paper/dataset_metric_eval.py --pickles_dir ~/exampleresearch/data > ~/exampleresearch/experiments/dataset_metric_eval_tables.txt
 ```
 Once you compile the latex tables, they will look like this:
 
@@ -154,7 +144,7 @@ Once you compile the latex tables, they will look like this:
 #### Most Representative Songs
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/metric_table_most_rep_songs.png)
 
-Now, you can use the scripts in template_scripts, to transform the midi files in mp3, wav and jpg, however, the images aren't very flexible from console, seem there's no way to export to png from console indicating the dimensions, so I recommend:
+Now, you can use the scripts in [template_scripts](https://github.com/sebasgverde/rnn-cells-music-paper/tree/master/template_scripts), to transform the midi files in mp3, wav and jpg, however, the images aren't very flexible from console, seem there's no way to export to png from console indicating the dimensions, so I recommend:
 
 - you can use mid_2_wav and mid_2_mp3 to get the audios
 - open the midis in musescore, change the dimension in design->page settings
