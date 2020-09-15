@@ -3,7 +3,7 @@
 SAMPLE_PYTHON=./rnnmusic/generate.py
 
 EXPERIMENT_PATH=~/exampleresearch/models/selected
-OUTPUT_PATH=~/exampleresearch/generated_songs
+OUTPUT_PATH=~/exampleresearch/experiments/generated_songs
 
 mkdir $OUTPUT_PATH
 
