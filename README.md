@@ -60,7 +60,7 @@ git clone -b 2.0 --single-branch https://github.com/sebasgverde/music-geometry-e
 ```
 
 #### Datasets
-The mono-midi-transposition-dataset is the result of series of transformations over the mono-MusicXML-dataset
+The [mono-midi-transposition-dataset](https://sebasgverde.github.io/mono-midi-transposition-dataset) is the result of series of transformations over the mono-MusicXML-dataset
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/datasetflow.png)
 Download the datasets:
 ```
