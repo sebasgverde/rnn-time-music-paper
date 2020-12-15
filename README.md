@@ -1,4 +1,4 @@
-# <center>Sequence Generation using Deep Recurrent Networks: A study case in music.</center>
+# <center>A framework to compare music generative models with automatic evaluation metrics extended to rhythm.</center>
 
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
@@ -9,8 +9,7 @@
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNtraining.jpg)
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNsample.jpg)
 ## Abstract
-Automatic generation of sequences has been a highly explored field in the last years. In particular, natural language processing and automatic music composition have gained importance due to the recent advances in machine learning and Neural Networks with intrinsic memory mechanisms such as Recurrent Neural Networks. This paper evaluates different types of memory mechanisms (memory cells) and analyses their performance in the field of music composition. The proposed approach considers music theory concepts such as transposition, and uses data transformations (embeddings) to introduce semantic meaning. The performance of the proposed architecture is automatically evaluated using quantitative metrics based in geometry to measure the tonality of a musical composition.
-
+To train a machine learning models is necessary to take many decisions about many options for each process involved, when it is in the field of sequence generation and more specifically of music composition, the nature of the problem helps to narrow the options but at the same time, more options appear for specific challenges. This paper takes the framework proposed in a previous research that did not consider rhythm to make a series of design decisions, then rhythm support is added to evaluate the performance of two RNN memory cells in the creation of monophonic music, considering the handling of music transposition and evaluating the quality of the pieces generated with automatic quantitative metrics based in geometry which have rhythm support added as well.
 
 ## Datasets, Model Weights and more
 
