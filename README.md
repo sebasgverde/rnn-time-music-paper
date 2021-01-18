@@ -1,4 +1,4 @@
-# <center>A framework to compare music generative models with automatic evaluation metrics extended to rhythm.</center>
+# <center>A framework to compare music generative models using automatic evaluation metrics extended to rhythm.</center>
 
 <center>Songs, code and datasets to replicate the research and the specific results of the paper</center>
 
