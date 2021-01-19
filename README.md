@@ -9,7 +9,7 @@
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNtraining.jpg)
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNsample.jpg)
 ## Abstract
-To train a machine learning models is necessary to take many decisions about many options for each process involved, when it is in the field of sequence generation and more specifically of music composition, the nature of the problem helps to narrow the options but at the same time, more options appear for specific challenges. This paper takes the framework proposed in a previous research that did not consider rhythm to make a series of design decisions, then rhythm support is added to evaluate the performance of two RNN memory cells in the creation of monophonic music, considering the handling of music transposition and evaluating the quality of the pieces generated with automatic quantitative metrics based in geometry which have rhythm support added as well.
+To train a machine learning model is necessary to take numerous decisions about many options for each process involved, in the field of sequence generation and more specifically of music composition, the nature of the problem helps to narrow the options but at the same time, some other options appear for specific challenges. This paper takes the framework proposed in a previous research that did not consider rhythm to make a series of design decisions, then, rhythm support is added to evaluate the performance of two RNN memory cells in the creation of monophonic music. The model considers the handling of music transposition and the framework evaluates the quality of the generated pieces using automatic quantitative metrics based on geometry which have rhythm support added as well.
 
 ## Datasets, Model Weights and more
 
