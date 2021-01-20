@@ -4,7 +4,7 @@
 
 
 
-[<center>Paper</center>]() [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
+[<center>Paper</center>](https://arxiv.org/abs/2101.07669) [<center>Github</center>](https://github.com/sebasgverde/rnn-time-music-paper)
 
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNtraining.jpg)
 ![](https://sebasgverde.github.io/rnn-time-music-paper/images/RNNsample.jpg)
